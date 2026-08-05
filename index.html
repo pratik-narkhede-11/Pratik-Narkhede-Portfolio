@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratik Narkhede - Resume</title>
+    <!-- FontAwesome for standard icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Devicon for programming language and tool logos -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Violet Theme Gradient Background */
+            background: linear-gradient(135deg, #2e1065 0%, #4c1d95 50%, #6d28d9 100%);
+            color: #f3f4f6;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+        }
+
+        /* Header / Profile Section */
+        .header {
+            text-align: center;
+            padding: 40px 20px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.15);
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            /* Crop configuration to focus on the face/upper body */
+            object-fit: cover;
+            object-position: center 15%; 
+            border: 4px solid #a78bfa;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #ddd6fe;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.95rem;
+            color: #c4b5fd;
+        }
+
+        .contact-info a {
+            color: #c4b5fd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: #fff;
+        }
+
+        /* Main Content Sections */
+        .section {
+            padding: 30px 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            color: #a78bfa;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            font-size: 1.2rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #e5e7eb;
+            text-align: justify;
+        }
+
+        /* Skills with Logos */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #8b5cf6;
+        }
+
+        .skill-category strong {
+            display: block;
+            color: #ddd6fe;
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+
+        .skill-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .badge {
+            background: rgba(139, 92, 246, 0.2);
+            color: #ede9fe;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .badge i {
+            font-size: 1.1rem;
+        }
+
+        /* Experience Section */
+        .job {
+            margin-bottom: 25px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+            flex-wrap: wrap;
+        }
+
+        .company {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ddd6fe;
+        }
+
+        .job-title {
+            font-size: 1.1rem;
+            color: #a78bfa;
+            font-style: italic;
+        }
+
+        .date {
+            font-size: 0.9rem;
+            color: #a78bfa;
+            background: rgba(0,0,0,0.2);
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        .project-title {
+            font-weight: 600;
+            color: #c4b5fd;
+            margin: 10px 0 5px;
+            padding-top: 10px;
+            border-top: 1px dashed rgba(255,255,255,0.1);
+        }
+
+        ul {
+            list-style-position: inside;
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            color: #d1d5db;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .section {
+                padding: 20px;
+            }
+            .job-header {
+                flex-direction: column;
+            }
+            .date {
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header Section -->
+    <div class="header">
+        <img src="profile.jpg" alt="Pratik Narkhede" class="profile-img">
+        <h1>PRATIK NARKHEDE</h1>
+        <div class="contact-info">
+            <span><i class="fas fa-phone"></i> +91 70583 60438[cite: 1]</span>
+            <span><i class="fas fa-envelope"></i> <a href="mailto:pratikpnarkhede@gmail.com">pratikpnarkhede@gmail.com</a>[cite: 1]</span>
+            <span><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/pratik-narkhede-200421209" target="_blank">LinkedIn Profile</a>[cite: 1]</span>
+        </div>
+    </div>
+
+    <!-- Summary Section -->
+    <div class="section">
+        <h2 class="section-title"><i class="fas fa-user-circle"></i> Summary</h2>
+        <p>Highly skilled Java Backend Engineer with over 2+ years of experience designing, scaling, and deploying robust microservices architectures[cite: 1]. Proficient in building high-performance, secure RESTful APIs using the Spring Boot framework, containerizing applications with Docker, and orchestrating automated CI/CD pipelines for seamless AWS cloud-native deployments[cite: 1]. Complements strong backend expertise with a solid background in Data Engineering, adeptly leveraging PySpark for high-volume ETL/ELT pipeline design and Apache Airflow for scheduling complex, automated workflow dependencies[cite: 1]. A performance-driven professional dedicated to optimizing distributed systems for maximum reliability and scalability[cite: 1].</p>
+    </div>
+
+    <!-- Education Section -->
+    <div class="section">
+        <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+        <div class="job">
+            <div class="job-header">
+                <span class="company">Bachelor of Engineering in Information Technology and Honors in AI-ML</span>
+                <span class="date">2020 - 2024</span>
+            </div>
+            <div class="job-title">International Institute of Information Technology, Pune</div>
+            <p style="margin-top: 5px;">Completed Graduation in B.E - IT with the CGPA of 9.24.</p>
+        </div>
+    </div>
+
+    <!-- Skills Section -->
+    <div class="section">
+        <h2 class="section-title"><i class="fas fa-tools"></i> Skills</h2>
+        <div class="skills-grid">
+            
+            <div class="skill-category">
+                <strong>Backend Development & Architecture[cite: 1]</strong>
+                <div class="skill-badges">
+                    <span class="badge"><i class="devicon-java-plain"></i> Java</span>
+                    <span class="badge"><i class="devicon-spring-original"></i> Spring Boot</span>
+                    <span class="badge">Microservices</span>
+                    <span class="badge">Eureka</span>
+                    <span class="badge">REST</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <strong>Data Engineering & Orchestration[cite: 1]</strong>
+                <div class="skill-badges">
+                    <span class="badge"><i class="devicon-apache-plain"></i> PySpark</span>
+                    <span class="badge">Apache Airflow</span>
+                    <span class="badge">Databricks</span>
+                    <span class="badge">Snowflake</span>
+                    <span class="badge">ETL/ELT</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <strong>Data Management & ORM[cite: 1]</strong>
+                <div class="skill-badges">
+                    <span class="badge"><i class="devicon-postgresql-plain"></i> PostgreSQL</span>
+                    <span class="badge"><i class="devicon-mysql-plain"></i> MySQL</span>
+                    <span class="badge"><i class="devicon-sqlite-plain"></i> SQLite</span>
+                    <span class="badge"><i class="devicon-mongodb-plain"></i> MongoDB</span>
+                    <span class="badge"><i class="devicon-hibernate-plain"></i> Hibernate</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <strong>Cloud, Containerization & CI/CD[cite: 1]</strong>
+                <div class="skill-badges">
+                    <span class="badge"><i class="devicon-amazonwebservices-plain-wordmark"></i> AWS</span>
+                    <span class="badge"><i class="devicon-docker-plain"></i> Docker</span>
+                    <span class="badge"><i class="devicon-github-original"></i> GitHub Actions</span>
+                    <span class="badge"><i class="devicon-gitlab-plain"></i> GitLab CI/CD</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Work Experience Section -->
+    <div class="section">
+        <h2 class="section-title"><i class="fas fa-briefcase"></i> Work Experience</h2>
+        
+        <div class="job">
+            <div class="job-header">
+                <span class="company">RSquareSoft Technologies Pvt. Ltd. | Pune, India[cite: 1]</span>
+                <span class="date">April 2024 - Present[cite: 1]</span>
+            </div>
+            <div class="job-title">Associate Software Engineer[cite: 1]</div>
+
+            <div class="project-title">Project 3: Roche Data Marketplace (Client Project) | Backend Engineer (January 2026 - Present)[cite: 1]</div>
+            <ul>
+                <li>Enterprise API Engineering: Engineered ~30 scalable, low-latency enterprise RESTful APIs using Java and Spring Boot to power a complex data marketplace ecosystem[cite: 1].</li>
+                <li>Al-Augmented Development: Pioneered an Al agent-first approach utilizing cutting-edge coding assistants to accelerate feature design, automate boilerplate code generation, and significantly reduce delivery timelines[cite: 1].</li>
+                <li>Multi-Source Data Integration: Successfully integrated and optimized backend connectivity with MongoDB and Sinequa search/analytics engines, handling complex data processing and retrieval pipelines[cite: 1].</li>
+                <li>Analytics Dashboard Development: Built and launched an analytics dashboard tracking 25+ critical metrics, providing real-time visibility into portal usage patterns and user experience data[cite: 1].</li>
+                <li>Modern CI/CD & Collaboration: Partnered with the client's DevOps team using GitLab and GitLab CI/CD pipelines to streamline and troubleshoot automated workflows, ensuring smooth, automated software releases[cite: 1].</li>
+            </ul>
+
+            <div class="project-title">Project 2: Openion Leader Intelligence (Client Project) | Data Engineer (February 2025 - December 2025)[cite: 1]</div>
+            <ul>
+                <li>Designed, built, and optimized 2 core production-ready data pipelines leveraging PySpark on AWS EMR, efficiently processing multiple terabytes of raw data monthly while maintaining high data throughput[cite: 1].</li>
+                <li>Architected and deployed over 30 complex Apache Airflow DAGs from scratch, automating intricate task dependencies and ensuring highly stable scheduling for critical business reporting[cite: 1].</li>
+                <li>Significantly accelerated ETL job runtimes and reduced cloud compute overhead by refactoring transformation logic and tuning distributed PySpark execution plans[cite: 1].</li>
+                <li>Validated data quality across massive datasets by implementing robust validation checks and strict business rules directly into the pipeline architecture[cite: 1].</li>
+            </ul>
+
+            <div class="project-title">Project 1: Valetplus (In-House Product) | Backend & DevOps Engineer (April 2024 - January 2025)[cite: 1]</div>
+            <ul>
+                <li>Honored as the "Star Performer of 2024" for architecting and delivering a resilient backend system from scratch, successfully driving the product's initial market release[cite: 1].</li>
+                <li>Developed ~30 high-performance RESTful APIs using Java and Spring Boot, leveraging Hibernate ORM and PostgreSQL to build a highly stable and optimized data access layer[cite: 1].</li>
+                <li>Engineered robust security protocols using Spring Security and implemented the HATEOAS pattern across 10+ critical endpoints to deliver self-descriptive, secure, and standardized API responses[cite: 1].</li>
+                <li>Functioned as the sole DevOps Engineer for the product; designed, managed, and fully automated the complete CI/CD pipeline using GitHub Actions and AWS DevOps, accelerating production deployment cycles[cite: 1].</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
